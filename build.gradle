@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.sf.sociaal:freetts:1.2.2'
+    implementation 'org.mobicents.external.freetts:cmu_us_kal:1.0'
+}
+
+run {
+    systemProperty 'freetts.voices', 'com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory'
+}
